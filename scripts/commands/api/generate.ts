@@ -16,7 +16,7 @@ async function main() {
     .orderBy([(stream: Stream) => stream.channel, (stream: Stream) => stream.timeshift])
     .map((stream: Stream) => stream.toJSON())
 
-  logger.info(`found ${streams.count()} streams`)
+  logger.info(`found ${streams.length} streams`)
 
   logger.info('saving to .api/streams.json...')
   const apiStorage = new Storage(API_DIR)
